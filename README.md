@@ -111,7 +111,7 @@ http://localhost:3014/v1/chat/completions
 
 | 环境变量             | 是否必须 | 描述                                                                                                                  | 例子                                                                             |
 | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `SEARCH_SERVICE`   | Yes      | 你的搜索服务，选择什么服务，就需要配置什么服务的key | `search1api, google, bing, serpapi, serper, duckduckgo, searxng`               |
+| `SEARCH_SERVICE`   | Yes      | 你的搜索服务，选择什么服务，就需要配置什么服务的key | `search1api, google, bing, serpapi, serper, duckduckgo, searxng, talordata`               |
 | `APIBASE`          | No       | 三方代理地址                                                                                                         | `https://api.openai.com, https://api.moonshot.cn, https://api.groq.com/openai` |
 | `MAX_RESULTS`      | Yes      | 搜索结果条数                                                                                                          | `10`                                                                           |
 | `CRAWL_RESULTS`    | No       | 要进行深度搜索（搜索后获取网页正文）的数量，目前仅支持 search1api，深度速度会慢                                       | `1`                                                                            |
@@ -122,6 +122,7 @@ http://localhost:3014/v1/chat/completions
 | `SERPAPI_KEY`      | No       | 如选serpapi必填，免费100次/月，点击[链接](https://serpapi.com/) 注册                                              | `xxx`                                                                          |
 | `SERPER_KEY`       | No       | 如选serper必填，6个月免费额度2500次，点击[链接](https://serper.dev/) 注册                                         | `xxx`                                                                          |
 | `SEARXNG_BASE_URL` | No       | 如选searxng必填，填写自建searXNG服务域名，需打开 json 模式，教程参考[链接](https://github.com/searxng/searxng) | `https://search.xxx.xxx`                                                                         |
+| `TALORDATA_KEY` | No | 如选talordata必填，注册免费额度，点击[链接](https://talordata.com/?campaignid=W5d72kLodDV5TWxb&utm_source=search2ai&utm_term=search2ai) | `xxx` |
 | `OPENAI_TYPE`      | No       | openai供给来源，默认为openai                                                                                          | `openai, azure`                                                                |
 | `RESOURCE_NAME`    | No       | 如选azure必填                                                                                                         | `xxxx`                                                                         |
 | `DEPLOY_NAME`      | No       | 如选azure必填                                                                                                         | `gpt-35-turbo`                                                                 |
