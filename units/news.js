@@ -115,6 +115,29 @@ async function news(query) {
             }));
             break;
 
+        case "talordata":
+          const talordataUrl = "https://api.talordata.com/serp";
+          const talordataResponse = await fetch(talordataUrl, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${process.env.TALORDATA_KEY}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              q: query,
+              source: "google",
+              num: process.env.MAX_RESULTS || 10,
+              news: true
+            })
+          });
+          const talordataData = await talordataResponse.json();
+          results = (talordataData.news || []).slice(0, process.env.MAX_RESULTS).map((item) => ({
+            title: item.title,
+            link: item.link,
+            snippet: item.snippet
+          }));
+          break;
+
         default:
           console.error(`不支持的搜索服务: ${process.env.SEARCH_SERVICE}`);
           return `不支持的搜索服务: ${process.env.SEARCH_SERVICE}`;
